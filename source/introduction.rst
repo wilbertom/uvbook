@@ -60,7 +60,7 @@ which will be compiled automatically.
 
 .. _Clone: https://github.com/nikhilm/uvbook
 .. _Download: https://github.com/nikhilm/uvbook/downloads
-.. _v0.11.1: https://github.com/joyent/libuv/tags
+.. _v0.11.22: https://github.com/joyent/libuv/tags
 .. _V8: http://code.google.com/p/v8/
 .. _libev: http://software.schmorp.de/pkg/libev.html
 .. _libuv: https://github.com/joyent/libuv
