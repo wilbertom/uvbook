@@ -27,7 +27,7 @@ examples=\
 	queue-cancel
 
 UV_PATH=$(shell pwd)/../libuv
-UV_LIB=$(UV_PATH)/libuv.a
+UV_LIB=$(UV_PATH)/.libs/libuv.a
 CFLAGS=-g -Wall -I$(UV_PATH)/include
 LIBS=
 
@@ -65,7 +65,9 @@ uvwget/uvwget: uvwget/main.c
 	gcc $(CFLAGS) `curl-config --cflags --libs` -o uvwget/uvwget uvwget/main.c $(UV_LIB) $(LIBS)
 
 $(UV_LIB):
+	cd ../libuv; sh ./autogen.sh; ./configure 
 	make -C ../libuv
+	make -C ../libuv check
 
 clean:
 	for dir in $(examples); do cd $$dir; rm -f $$dir; rm -rf $$dir.dSYM; cd ..; done
